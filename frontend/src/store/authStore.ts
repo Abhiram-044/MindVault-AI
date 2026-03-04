@@ -11,7 +11,7 @@ interface AuthState {
   user: User | null;
   token: string | null;
   isHydrated: boolean;
-  logoutTimer: NodeJS.Timeout | null; 
+  logoutTimer: ReturnType<typeof setTimeout> | null; 
   expiresAt: number | null;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
